@@ -4,14 +4,17 @@ title: El mundo de MySQL desde tu shell
 ---
 
 # Trabaja en github con autenticación por ssh
-    Primero hay que asegurarse de tener ssh(por ejemplo opnessh) instalado, lo daré
-por sentado.
+
+Primero hay que asegurarse de tener ssh(por ejemplo opnessh) instalado.
 
 ## Proceso
+
 ### Creando una clave ssh
-    Si no se ha generado anteriormente el primer paso es generar nuestras claves
+
+Si no se ha generado anteriormente el primer paso es generar nuestras claves
 privada y pública, que se almacenarán en el directorio oculto: ~/.ssh. Podemos
 generar nuestras claves mediante:
+
 ```shell
   cd ~/.ssh
   ssh-keygen #nos pedirá el nombre de los archivos que lo dejaremos por defecto
@@ -19,13 +22,15 @@ generar nuestras claves mediante:
   cat id_rsa.pub #esto nos muestra la clave pública
 
 ```
-    El contenido de id_rsa.pub es nuestra clave pública, su contenido en total es
+El contenido de id_rsa.pub es nuestra clave pública, su contenido en total es
 lo que debemos llevar a nuestro perfil de GitHub: dentro de Settings, SSH and GPG keys
 creamos una nueva clave ssh y pegamos el contenido.
 
 ### Agregando nuestra clave al agente
-    Para que nuestra autenticación funcione debemos agregar nuestra clave privada
+
+Para que nuestra autenticación funcione debemos agregar nuestra clave privada
 al agente ssh.
+
 ```shell
   eval $(ssh-agent -s) #iniciamos el agente de ssh
   ssh-add ~/.ssh/id_rsa #agregamos la clave privada al agente
@@ -33,12 +38,14 @@ al agente ssh.
 ```
 
 ### Trabajando con ssh
-    La proxima vez que clones un repositorio a local utiliza su dirección ssh, que a
+
+La proxima vez que clones un repositorio a local utiliza su dirección ssh, que a
 diferencia de la https utiliza un formato **git@github.com:user/repositorio.git**
-    El resto del funcionamiento es identico, salvo que no tienes que recurrir a la
+El resto del funcionamiento es identico, salvo que no tienes que recurrir a la
 autenticación por contraseña.
     Si quieres cambiar la dirección de un repositorio en local entre https o ssh
 siempre puede recurir a:
+
 ```shell
     git remote set-url origin git@github.com:USERNAME/OTHERREPOSITORY.git
     #o
