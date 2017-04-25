@@ -1,6 +1,6 @@
 ---
 layout: post
-title: El mundo de MySQL desde tu shell
+title: Trabaja en github con autenticación por ssh
 ---
 
 # Trabaja en github con autenticación por ssh
