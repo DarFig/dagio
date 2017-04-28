@@ -8,7 +8,7 @@ en entorno gráfico por defecto. Pero en algunos casos podemos requerir de este 
 para momentos muy específicos. De esta manera llegué a la duda de como desactivar el
 entorno gráfico pero dejarlo instalado para cuando lo necesite.
 
-## iniciamos
+## Iniciamos
 ### Modificando opciones de arranque
 
 Necesitaremos tener permisos ya sea como root, o con acceso a sudo.
